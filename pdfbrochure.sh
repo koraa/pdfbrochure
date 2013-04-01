@@ -33,7 +33,7 @@ setNpvo() {
 }
 
 setfile() {
-  test -x "$1" -o -n "$justtransform" || usage "Given file does not exist"
+  test -x "$1" -o -n "$justtransform" || usage "'$1' does not exist"
   file="$1"
 }
 
