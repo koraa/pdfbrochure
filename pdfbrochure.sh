@@ -1,8 +1,11 @@
 #! /bin/sh
 
-# Helper
+### HELPER #########################################################
+
 function inc() { (( $1 = ${!1} + 1)); }
 function dec() { (( $1 = ${!1} - 1)); }
+
+### VARIABLES ######################################################
 
 # Constants
 empty="{}"
@@ -14,6 +17,8 @@ appempty=true
 pvO=( $(seq $1) )
 pvN=( )
 
+### FILL VECTOR ####################################################
+
 # Append empty last page
 test $appempty && pvO+=( "$empty" )
 
@@ -23,6 +28,8 @@ while [ $app -gt 0 ]; do
   pvO+=( "$empty" )
   dec app
 done
+
+### TRANSFORM ######################################################
 
 # Generate new pvOector
 i=0
@@ -37,6 +44,7 @@ while [ $k -gt $i ]; do
     pvN+=( ${pvO[$k]} )
     inc i; dec k
 done
-echo $DBG; inc DBG
+
+### OUTPUT #############################################################
 
 echo ${pvN[@]}
