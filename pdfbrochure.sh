@@ -100,11 +100,15 @@ empty="{}"
 
 ### FILL VECTOR ####################################################
 
-# Append empty last page
-test $lastempty && pvO+=( "$empty" )
+# Count required additional pages
+((app= 4 - ${#pvO[@]} % 4))
+
+# Make shure the last page is empty
+test '(' -z $lastempty ')' \
+&& test '(' $app -gt 3 ')' \
+&& app=0
 
 # Append empty pages until len is a multiple of 4
-((app= 4 - ${#pvO[@]} % 4)) # Get required additional pages
 while [ $app -gt 0 ]; do
   pvO+=( "$empty" )
   dec app
