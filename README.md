@@ -31,7 +31,7 @@ The following  *transformations* are then applied:
 2. If the *-e* option is given, pdfbrochure makes sure the last page is empty.
 3. Then pdfbrochure shifts the pages to create a brochure:
 
-          FRONT               BACK
+     -     FRONT               BACK
      ----------------------------------
      last    first    | first+1  last-1
      last-2  first+2  | first+3  last-3
