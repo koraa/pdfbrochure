@@ -32,7 +32,7 @@ The following  *transformations* are then applied:
 3. Then pdfbrochure shifts the pages to create a brochure:
 
           FRONT               BACK
-
+     ----------------------------------
      last    first    | first+1  last-1
      last-2  first+2  | first+3  last-3
      last-4  first+4  | first+5  last-5
